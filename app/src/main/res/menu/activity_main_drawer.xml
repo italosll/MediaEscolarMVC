@@ -4,34 +4,45 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_notas_bim_a"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Notas 1° Bimestre" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_notas_bim_b"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Notas 2° Bimestre" />
+
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_notas_bim_c"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Notas 3° Bimestre" />
+
+        <item
+            android:id="@+id/nav_notas_bim_d"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Notas 4° Bimestre" />
+
+
+
+        <item
+            android:id="@+id/nav_resultado_final"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Resultado Final" />
+
+
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Compartilhar">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Compartilhar App" />
+
         </menu>
     </item>
 
