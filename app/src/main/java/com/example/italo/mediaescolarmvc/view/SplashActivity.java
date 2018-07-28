@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.italo.mediaescolarmvc.R;
+import com.example.italo.mediaescolarmvc.datasource.DataSource;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
 
         apresentarTelaSplash();
 
+
     }
 
 
@@ -27,9 +29,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+                DataSource ds = new DataSource(getBaseContext()) ;
+
                 Intent telaPrincipal = new Intent(SplashActivity.this, MainActivity.class);
 
                 startActivity(telaPrincipal);
+                finish();
+
 
             }
         }, SPLASH_TIME_OUT);

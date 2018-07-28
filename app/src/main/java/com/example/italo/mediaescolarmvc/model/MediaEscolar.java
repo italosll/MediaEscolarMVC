@@ -4,6 +4,7 @@ import android.provider.MediaStore;
 
 public class MediaEscolar {
 
+    private int id;
     private String materia;
     private String bimestre;
     private String situacao;
@@ -15,6 +16,14 @@ public class MediaEscolar {
 
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getMateria() {
         return materia;
