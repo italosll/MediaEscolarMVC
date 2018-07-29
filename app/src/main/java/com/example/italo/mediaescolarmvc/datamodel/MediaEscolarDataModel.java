@@ -45,27 +45,27 @@ public class MediaEscolarDataModel {
         return id;
     }
 
-    public String getMateria() {
+    public static String getMateria() {
         return materia;
     }
 
-    public String getBimestre() {
+    public static String getBimestre() {
         return bimestre;
     }
 
-    public String getSituacao() {
+    public static String getSituacao() {
         return situacao;
     }
 
-    public String getNotaProva() {
+    public static String getNotaProva() {
         return notaProva;
     }
 
-    public String getNotaMateria() {
+    public static String getNotaMateria() {
         return notaMateria;
     }
 
-    public String getMediaFinal() {
+    public static String getMediaFinal() {
         return mediaFinal;
     }
 

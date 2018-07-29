@@ -1,7 +1,5 @@
 package com.example.italo.mediaescolarmvc.model;
 
-import android.provider.MediaStore;
-
 public class MediaEscolar {
 
     private int id;
