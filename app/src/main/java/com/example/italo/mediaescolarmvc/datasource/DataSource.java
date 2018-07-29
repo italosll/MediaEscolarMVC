@@ -2,17 +2,24 @@ package com.example.italo.mediaescolarmvc.datasource;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.italo.mediaescolarmvc.datamodel.MediaEscolarDataModel;
+import com.example.italo.mediaescolarmvc.model.MediaEscolar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataSource extends SQLiteOpenHelper {
 
 
     private static final String DB_NAME = "media_escolar.sqlite";
     private static final int DB_VERSION = 1;
+
+    Cursor cursor;
 
     SQLiteDatabase db;
 
@@ -79,6 +86,39 @@ public class DataSource extends SQLiteOpenHelper {
         sucesso = db.update(tabela, dados , "id=?", new String[]{Integer.toString(id)}) > 0 ;
 
         return  sucesso;
+    }
+
+
+    public List<MediaEscolar>  getAllMediaEscolar(){
+
+        MediaEscolar obj;
+
+        List<MediaEscolar> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM " + MediaEscolarDataModel.getTABELA() + " ORDER BY id";
+
+        cursor = db.rawQuery(sql, null);
+
+        if (cursor.moveToFirst()){
+
+            do{
+                obj = new MediaEscolar();
+
+                obj.setId(cursor.getInt(cursor.getColumnIndex(MediaEscolarDataModel.getId())));
+                obj.setMateria(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getMateria())));
+                obj.setSituacao(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getSituacao())));
+
+
+
+                lista.add(obj);
+            }while (cursor.moveToNext());
+
+        }
+
+        cursor.close();
+
+        return lista;
+
     }
 
 

@@ -7,6 +7,8 @@ import com.example.italo.mediaescolarmvc.datamodel.MediaEscolarDataModel;
 import com.example.italo.mediaescolarmvc.datasource.DataSource;
 import com.example.italo.mediaescolarmvc.model.MediaEscolar;
 
+import java.util.List;
+
 public class MediaEscolarController  extends DataSource{
 
     ContentValues dados;
@@ -70,6 +72,13 @@ public class MediaEscolarController  extends DataSource{
 
         return sucesso;
 
+
+    }
+
+
+    public List<MediaEscolar> listar(){
+
+        return getAllMediaEscolar();
 
     }
 

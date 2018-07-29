@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.example.italo.mediaescolarmvc.R;
 import com.example.italo.mediaescolarmvc.controller.MediaEscolarController;
 import com.example.italo.mediaescolarmvc.model.MediaEscolar;
+
+import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -30,29 +33,18 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //DataSource ds = new DataSource(getBaseContext()) ;
 
-                MediaEscolar obj = new MediaEscolar();
-
-                obj.setMateria("Matemática");
-                obj.setBimestre("2° Bimestre");
-                obj.setNotaProva(7);
-                obj.setNotaMateria(7);
-                obj.setMediaFinal(7);
-                obj.setSituacao("Reprovado");
 
                 MediaEscolarController mediaEscolarController = new MediaEscolarController(getBaseContext());
 
 
-//                mediaEscolarController.salvar(obj);
-//                mediaEscolarController.salvar(obj);
-//                mediaEscolarController.salvar(obj);
-//                mediaEscolarController.salvar(obj);
-//                mediaEscolarController.salvar(obj);
 
 
-                obj.setId(3);
-                mediaEscolarController.alterar(obj);
+                List<MediaEscolar> objetos = mediaEscolarController.listar();
+
+                for (MediaEscolar obj  : objetos ){
+                    Log.i("CRUD LISTAR", "ID: " + obj.getId() + " - Matéria: " + obj.getMateria() + " - Situação: " + obj.getSituacao());
+                }
 
 
                 Intent telaPrincipal = new Intent(SplashActivity.this, MainActivity.class);
