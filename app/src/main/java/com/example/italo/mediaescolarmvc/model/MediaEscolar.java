@@ -8,6 +8,7 @@ public class MediaEscolar {
     private String situacao;
     private double notaProva;
     private double notaMateria;
+    private double notaTrabalho;
     private double mediaFinal;
 
     public MediaEscolar(){
@@ -18,6 +19,7 @@ public class MediaEscolar {
     public int getId() {
         return id;
     }
+
 
     public void setId(int id) {
         this.id = id;
@@ -61,6 +63,14 @@ public class MediaEscolar {
 
     public void setNotaMateria(double notaMateria) {
         this.notaMateria = notaMateria;
+    }
+
+    public double getNotaTrabalho() {
+        return notaTrabalho;
+    }
+
+    public void setNotaTrabalho(double notaTrabalho) {
+        this.notaTrabalho = notaTrabalho;
     }
 
     public double getMediaFinal() {

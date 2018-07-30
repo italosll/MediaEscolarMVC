@@ -17,12 +17,14 @@ public class MediaEscolarController  extends DataSource{
         super(context);
     }
 
-    public void calcularMedia(){
+    public double calcularMedia(MediaEscolar obj){
+
+        return (obj.getNotaProva() + obj.getNotaTrabalho()) /2;
 
     }
 
-    public void resultadoFinal(){
-
+    public String resultadoFinal(Double media){
+        return media >= 7 ? "Aprovado" : "Reprovado";
     }
 
     public boolean salvar( MediaEscolar obj){

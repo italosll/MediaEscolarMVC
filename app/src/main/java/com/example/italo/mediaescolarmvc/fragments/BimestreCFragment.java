@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.italo.mediaescolarmvc.R;
+import com.example.italo.mediaescolarmvc.controller.MediaEscolarController;
+import com.example.italo.mediaescolarmvc.model.MediaEscolar;
+import com.example.italo.mediaescolarmvc.view.MainActivity;
 
 
 public class BimestreCFragment extends Fragment {
@@ -24,6 +27,9 @@ public class BimestreCFragment extends Fragment {
     EditText editNotaTrabalho;
     TextView txtResultado;
     TextView txtSituacaoFinal;
+
+    MediaEscolar mediaEscolar;
+    MediaEscolarController controller;
 
     double notaProva;
     double notaTrabalho;
@@ -48,7 +54,7 @@ public class BimestreCFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_bimestre_c, container, false);
@@ -111,17 +117,34 @@ public class BimestreCFragment extends Fragment {
 
                     // Após Validação
                     if (dadosValidados) {
-                        media = (notaProva + notaTrabalho) / 2;
 
-                        //txtResultado.setText(MainActivity.formatarValorDecimal(media));
 
-                        if (media >= 7) txtSituacaoFinal.setText("Aprovado");
-                        else txtSituacaoFinal.setText("Reprovado");
+                        mediaEscolar = new MediaEscolar();
+                        controller = new MediaEscolarController(context);
 
-                        //editNotaProva.setText(MainActivity.formatarValorDecimal(notaProva));
-                        //editNotaTrabalho.setText(MainActivity.formatarValorDecimal(notaTrabalho));
+                        mediaEscolar.setMateria(editMateria.getText().toString());
+                        mediaEscolar.setNotaProva(Double.parseDouble(editNotaProva.getText().toString()));
+                        mediaEscolar.setNotaTrabalho(Double.parseDouble(editNotaTrabalho.getText().toString()));
+                        mediaEscolar.setBimestre("1° Bimestre");
 
-                        //salvarSharedPreferences();
+                        media = controller.calcularMedia(mediaEscolar);
+
+                        mediaEscolar.setMediaFinal(media);
+
+                        mediaEscolar.setSituacao(controller.resultadoFinal(media));
+
+                        txtResultado.setText(MainActivity.formatarValorDecimal(media));
+
+                        txtSituacaoFinal.setText(mediaEscolar.getSituacao());
+
+                        if (controller.salvar(mediaEscolar)){
+                            //obj salvo com sucesso no banco de dados
+
+                            Toast.makeText(context,"Dados salvos com sucesso", Toast.LENGTH_LONG).show();
+                        }else{
+                            //falha ao salvar o obj no banco de dados
+                            Toast.makeText(context,"Falha ao salvar os Dados ", Toast.LENGTH_LONG).show();
+                        }
 
                     }
 
