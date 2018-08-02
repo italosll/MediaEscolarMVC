@@ -4,32 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d7ffd9"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="fragments.ModeloFragment"
     tools:showIn="@layout/fragment_bimestre_c">
 
 
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:text="Média Escolar"
-        android:textStyle="bold"
-        />
+
 
     <TextView
         android:id="@+id/txtBimestre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtTitulo"
-        android:layout_below="@+id/txtTitulo"
-        android:layout_marginTop="17dp"
-        android:text="1º Bimestre"
-        android:layout_alignLeft="@+id/txtTitulo" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="PLUS ULTRA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <TextView
         android:id="@+id/txtMateria"
@@ -41,7 +36,12 @@
         android:layout_marginTop="24dp"
         android:text="Matéria"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="29dp" />
+        android:layout_marginLeft="29dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <TextView
         android:id="@+id/txtNotaProva"
@@ -49,8 +49,13 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txtBimestre"
         android:layout_alignTop="@+id/txtMateria"
-        android:text="Nota da Prova"
-        android:layout_alignLeft="@+id/txtBimestre" />
+        android:text="Prova"
+        android:layout_alignLeft="@+id/txtBimestre"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <TextView
         android:id="@+id/txtNotaTrabalho"
@@ -59,9 +64,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/txtNotaProva"
         android:layout_marginEnd="42dp"
-        android:text="Nota Trabalho"
+        android:text="Trabalho"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="42dp" />
+        android:layout_marginRight="42dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <EditText
         android:id="@+id/editMateria"
@@ -73,7 +83,11 @@
         android:ems="10"
         android:hint="Matéria"
         android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/txtMateria" />
+        android:layout_alignLeft="@+id/txtMateria"
+        android:textStyle="bold"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <EditText
         android:id="@+id/editNotaProva"
@@ -83,7 +97,11 @@
         android:layout_alignTop="@+id/editMateria"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:layout_alignLeft="@+id/txtNotaProva" />
+        android:layout_alignLeft="@+id/txtNotaProva"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <EditText
         android:id="@+id/editNotaTrabalho"
@@ -93,7 +111,12 @@
         android:layout_alignTop="@+id/editNotaProva"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:layout_alignLeft="@+id/txtNotaTrabalho" />
+        android:layout_alignLeft="@+id/txtNotaTrabalho"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+
+        />
 
     <TextView
         android:id="@+id/txtMedia"
@@ -103,7 +126,11 @@
         android:layout_below="@+id/editMateria"
         android:layout_marginTop="24dp"
         android:text="Média"
-        android:layout_alignLeft="@+id/editMateria" />
+        android:layout_alignLeft="@+id/editMateria"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"
+        />
 
     <TextView
         android:id="@+id/txtSituacao"
@@ -112,7 +139,10 @@
         android:layout_alignStart="@+id/editNotaProva"
         android:layout_alignTop="@+id/txtMedia"
         android:text="Situação"
-        android:layout_alignLeft="@+id/editNotaProva" />
+        android:layout_alignLeft="@+id/editNotaProva"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"/>
 
     <TextView
         android:id="@+id/txtResultado"
@@ -120,7 +150,10 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txtMedia"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/txtMedia" />
+        android:layout_alignLeft="@+id/txtMedia"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"/>
 
     <TextView
         android:id="@+id/txtSituacaoFinal"
@@ -128,7 +161,10 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/txtSituacao"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/txtSituacao" />
+        android:layout_alignRight="@+id/txtSituacao"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#4b636e"/>
 
     <Button
         android:id="@+id/btnCalcular"
@@ -138,6 +174,13 @@
         android:layout_below="@+id/txtResultado"
         android:layout_marginTop="33dp"
         android:text="CALCULAR"
-        android:layout_alignLeft="@+id/txtResultado" />
+        android:layout_alignLeft="@+id/txtResultado"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+
+        />
 
 </RelativeLayout>

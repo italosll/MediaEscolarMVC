@@ -7,6 +7,7 @@ import com.example.italo.mediaescolarmvc.datamodel.MediaEscolarDataModel;
 import com.example.italo.mediaescolarmvc.datasource.DataSource;
 import com.example.italo.mediaescolarmvc.model.MediaEscolar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MediaEscolarController  extends DataSource{
@@ -45,7 +46,6 @@ public class MediaEscolarController  extends DataSource{
         return sucesso;
     }
 
-
     public boolean deletar(MediaEscolar obj){
 
         boolean sucesso = true;
@@ -55,7 +55,6 @@ public class MediaEscolarController  extends DataSource{
         return sucesso;
 
     }
-
 
     public boolean alterar(MediaEscolar obj){
 
@@ -77,15 +76,17 @@ public class MediaEscolarController  extends DataSource{
 
     }
 
-
     public List<MediaEscolar> listar(){
 
         return getAllMediaEscolar();
 
     }
 
+    public ArrayList<MediaEscolar> getResultadoFinal(){
 
 
+        return getAllResultadoFinal();
+    }
 
 
 }

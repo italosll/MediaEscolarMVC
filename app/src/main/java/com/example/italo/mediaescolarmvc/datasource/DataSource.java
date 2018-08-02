@@ -46,6 +46,7 @@ public class DataSource extends SQLiteOpenHelper {
 
     }
 
+
     public boolean insert(String tabela, ContentValues dados) {
 
         boolean sucesso = true;
@@ -108,7 +109,39 @@ public class DataSource extends SQLiteOpenHelper {
                 obj.setMateria(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getMateria())));
                 obj.setSituacao(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getSituacao())));
 
+                lista.add(obj);
 
+            }while (cursor.moveToNext());
+
+        }
+
+        cursor.close();
+
+        return lista;
+
+    }
+
+
+    public ArrayList<MediaEscolar>  getAllResultadoFinal(){
+
+        MediaEscolar obj;
+
+        ArrayList<MediaEscolar> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM " + MediaEscolarDataModel.getTABELA() + " ORDER BY id";
+
+        cursor = db.rawQuery(sql, null);
+
+        if (cursor.moveToFirst()){
+
+            do{
+                obj = new MediaEscolar();
+
+                obj.setId(cursor.getInt(cursor.getColumnIndex(MediaEscolarDataModel.getId())));
+                obj.setBimestre(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getBimestre())));
+                obj.setMateria(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getMateria())));
+                obj.setMediaFinal(cursor.getDouble(cursor.getColumnIndex(MediaEscolarDataModel.getMediaFinal())));
+                obj.setSituacao(cursor.getString(cursor.getColumnIndex(MediaEscolarDataModel.getSituacao())));
 
                 lista.add(obj);
             }while (cursor.moveToNext());
@@ -120,6 +153,7 @@ public class DataSource extends SQLiteOpenHelper {
         return lista;
 
     }
+
 
 
 }
